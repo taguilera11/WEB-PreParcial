@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html><head></head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;"><p></p>
+<h1 data-path-to-node="0">Preparcial (20%) - Plataforma E-Commerce con Next.js y React Context</h1>
+<h2 data-path-to-node="2">Objetivo General</h2>
+<p data-path-to-node="3" id="p-rc_d8a8af22c6a3731c-1383"><span data-path-to-node="3,0">Integrar conceptos fundamentales y de arquitectura en&nbsp;<strong data-path-to-node="3,0" data-index-in-node="54">React</strong>&nbsp;y&nbsp;<strong data-path-to-node="3,0" data-index-in-node="62">Next.js (App Router)</strong>&nbsp;para diseñar una aplicación web modular que gestione un catálogo de productos, permita la navegación fluida entre vistas estáticas y dinámicas, y mantenga un estado global compartido y persistente a lo largo de toda la experiencia de usuario</span><span data-path-to-node="3,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="3,2">, haciendo uso de:</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+<ul data-path-to-node="4">
+<li>
+<p data-path-to-node="4,0,0" id="p-rc_d8a8af22c6a3731c-1384"><span data-path-to-node="4,0,0,0">Enrutamiento de vistas y layouts persistentes con&nbsp;<strong data-path-to-node="4,0,0,0" data-index-in-node="50">App Router</strong></span><span data-path-to-node="4,0,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="4,0,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="4,1,0" id="p-rc_d8a8af22c6a3731c-1385"><span data-path-to-node="4,1,0,0">Manejo de estado local, efectos e interactividad en componentes de cliente</span><span data-path-to-node="4,1,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="4,1,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="4,2,0" id="p-rc_d8a8af22c6a3731c-1386"><span data-path-to-node="4,2,0,0">Comunicación de componentes y flujo unidireccional de datos mediante&nbsp;<strong data-path-to-node="4,2,0,0" data-index-in-node="69">Props y Callbacks</strong></span><span data-path-to-node="4,2,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="4,2,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="4,3,0" id="p-rc_d8a8af22c6a3731c-1387"><span data-path-to-node="4,3,0,0">Gestión y consumo de estado compartido utilizando&nbsp;<strong data-path-to-node="4,3,0,0" data-index-in-node="50">React Context API</strong></span><span data-path-to-node="4,3,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="4,3,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="4,4,0" id="p-rc_d8a8af22c6a3731c-1388"><span data-path-to-node="4,4,0,0">Consulta asíncrona a servicios web externos mediante peticiones HTTP</span><span data-path-to-node="4,4,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="4,4,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="4,5,0" id="p-rc_d8a8af22c6a3731c-1389"><span data-path-to-node="4,5,0,0">Tipado estricto de modelos y componentes con&nbsp;<strong data-path-to-node="4,5,0,0" data-index-in-node="45">TypeScript</strong></span><span data-path-to-node="4,5,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="4,5,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+</ul>
+<h2 data-path-to-node="6">Preparación del Entorno</h2>
+<p data-path-to-node="7">Para el desarrollo de este preparcial no se requiere desplegar servicios de backend locales. La aplicación consumirá directamente la API pública de&nbsp;<strong data-path-to-node="7" data-index-in-node="148">DummyJSON</strong>.</p>
+<ol start="1" data-path-to-node="8">
+<li>
+<p data-path-to-node="8,0,0"><strong data-path-to-node="8,0,0" data-index-in-node="0">Creación del proyecto base:</strong>&nbsp;Genere el proyecto utilizando Next.js, App Router y TypeScript:</p>
+<div _ngcontent-ng-c468543929="" jslog="223238;track:impression,attention;BardVeMetadataKey:[[&quot;r_cc96bf46e1ffea86&quot;,&quot;c_ac4e111434683526&quot;,null,&quot;rc_d8a8af22c6a3731c&quot;,null,null,&quot;es&quot;,null,1,null,null,1,0]]" data-hveid="0" decode-data-ved="1" data-ved="0CAAQhtANahgKEwiQvfHs-dqWAxUAAAAAHQAAAAAQtBQ">
+<div _ngcontent-ng-c468543929="">
+<div _ngcontent-ng-c468543929="">
+<pre _ngcontent-ng-c468543929=""></pre>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p data-path-to-node="8,1,0"><strong data-path-to-node="8,1,0" data-index-in-node="0">Endpoints a consumir:</strong></p>
+<ul data-path-to-node="8,1,1">
+<li>
+<p data-path-to-node="8,1,1,0,0"><strong data-path-to-node="8,1,1,0,0" data-index-in-node="0">Listado del catálogo:</strong>&nbsp;<code data-path-to-node="8,1,1,0,0" data-index-in-node="22">GET [<a href="https://dummyjson.com/products?limit=8&amp;select=id,title,price,category,thumbnail,stock">https://dummyjson.com/products?limit=8&amp;select=id,title,price,category,thumbnail,stock</a>](<a href="https://dummyjson.com/products?limit=8&amp;select=id,title,price,category,thumbnail,stock)">https://dummyjson.com/products?limit=8&amp;select=id,title,price,category,thumbnail,stock)</a></code></p>
+</li>
+<li>
+<p data-path-to-node="8,1,1,1,0"><strong data-path-to-node="8,1,1,1,0" data-index-in-node="0">Detalle de producto individual:</strong>&nbsp;<code data-path-to-node="8,1,1,1,0" data-index-in-node="32">GET [<a href="https://dummyjson.com/products/">https://dummyjson.com/products/</a>](<a href="https://dummyjson.com/products/)">https://dummyjson.com/products/)</a>{id}</code></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 data-path-to-node="10">Enunciado del Reto</h2>
+<p data-path-to-node="11" id="p-rc_d8a8af22c6a3731c-1390"><span data-path-to-node="11,0">Desarrollar la aplicación web&nbsp;<strong data-path-to-node="11,0" data-index-in-node="30">"ShopHub"</strong>, una plataforma de comercio electrónico construida sobre la arquitectura App Router de Next.js</span><span data-path-to-node="11,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="11,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+<p data-path-to-node="12" id="p-rc_d8a8af22c6a3731c-1391"><span data-path-to-node="12,0">La aplicación debe permitir a los usuarios consultar un catálogo de artículos obtenidos de forma asíncrona, explorar la información detallada de cualquier producto mediante navegación dinámica y administrar un carrito de compras global cuyos datos se mantengan sincronizados y persistentes a lo largo de todas las vistas sin recargas completas del navegador (SPA)</span><span data-path-to-node="12,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="12,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+<h2 data-path-to-node="14">Especificación de Pantallas y Funcionalidades</h2>
+<h3 data-path-to-node="15">1. Barra Superior Persistente (Header)</h3>
+<p data-path-to-node="16">Componente de navegación visible en todas las rutas de la aplicación:</p>
+<ul data-path-to-node="17">
+<li>
+<p data-path-to-node="17,0,0" id="p-rc_d8a8af22c6a3731c-1392"><span data-path-to-node="17,0,0,0"><strong data-path-to-node="17,0,0,0" data-index-in-node="0">Identidad de la tienda:</strong>&nbsp;Título o marca con enlace de retorno hacia la vista principal</span><span data-path-to-node="17,0,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="17,0,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="17,1,0" id="p-rc_d8a8af22c6a3731c-1393"><span data-path-to-node="17,1,0,0"><strong data-path-to-node="17,1,0,0" data-index-in-node="0">Indicador del Carrito:</strong>&nbsp;Contador dinámico que muestra en todo momento la cantidad acumulada de productos seleccionados, reflejando de inmediato cualquier adición realizada desde las vistas</span><span data-path-to-node="17,1,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="17,1,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+</ul>
+<h3 data-path-to-node="18">2. Vista del Catálogo Principal</h3>
+<p data-path-to-node="19">Página de inicio encargada de presentar los artículos disponibles:</p>
+<ul data-path-to-node="20">
+<li>
+<p data-path-to-node="20,0,0" id="p-rc_d8a8af22c6a3731c-1394"><span data-path-to-node="20,0,0,0"><strong data-path-to-node="20,0,0,0" data-index-in-node="0">Carga y despliegue del catálogo:</strong>&nbsp;Consulta de los productos al servicio externo y presentación estructurada en tarjetas modulares</span><span data-path-to-node="20,0,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="20,0,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="20,1,0"><strong data-path-to-node="20,1,0" data-index-in-node="0">Contenido por artículo:</strong></p>
+<ul data-path-to-node="20,1,1">
+<li>
+<p data-path-to-node="20,1,1,0,0">Miniatura del producto, nombre, categoría, precio y unidades en stock.</p>
+</li>
+<li>
+<p data-path-to-node="20,1,1,1,0" id="p-rc_d8a8af22c6a3731c-1395"><span data-path-to-node="20,1,1,1,0,0">Enlace interactivo para acceder a la ficha de detalle individual del producto</span><span data-path-to-node="20,1,1,1,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="20,1,1,1,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="20,1,1,2,0" id="p-rc_d8a8af22c6a3731c-1396"><span data-path-to-node="20,1,1,2,0,0">Botón de acción rápida para añadir el artículo directamente al carrito de compras global</span><span data-path-to-node="20,1,1,2,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="20,1,1,2,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 data-path-to-node="21">3. Vista de Detalle de Producto</h3>
+<p data-path-to-node="22">Ruta dinámica parametrizada para consultar la información completa de un artículo específico a partir de su identificador:</p>
+<ul data-path-to-node="23">
+<li>
+<p data-path-to-node="23,0,0" id="p-rc_d8a8af22c6a3731c-1397"><span data-path-to-node="23,0,0,0"><strong data-path-to-node="23,0,0,0" data-index-in-node="0">Carga de información puntual:</strong>&nbsp;Petición asíncrona para obtener los datos extendidos del producto seleccionado</span><span data-path-to-node="23,0,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="23,0,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="23,1,0"><strong data-path-to-node="23,1,0" data-index-in-node="0">Panel de información:</strong></p>
+<ul data-path-to-node="23,1,1">
+<li>
+<p data-path-to-node="23,1,1,0,0">Fotografía principal, nombre del producto, categoría o marca, precio y disponibilidad de stock.</p>
+</li>
+<li>
+<p data-path-to-node="23,1,1,1,0">Descripción detallada del producto.</p>
+</li>
+<li>
+<p data-path-to-node="23,1,1,2,0" id="p-rc_d8a8af22c6a3731c-1398"><span data-path-to-node="23,1,1,2,0,0">Botón de acción para añadir el artículo al carrito de compras desde esta vista</span><span data-path-to-node="23,1,1,2,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="23,1,1,2,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="23,1,1,3,0" id="p-rc_d8a8af22c6a3731c-1399"><span data-path-to-node="23,1,1,3,0,0">Enlace o botón de retorno hacia el catálogo principal</span><span data-path-to-node="23,1,1,3,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="23,1,1,3,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 data-path-to-node="25">Requisitos de Arquitectura y Buenas Prácticas</h2>
+<ul data-path-to-node="26">
+<li>
+<p data-path-to-node="26,0,0" id="p-rc_d8a8af22c6a3731c-1400"><span data-path-to-node="26,0,0,0"><strong data-path-to-node="26,0,0,0" data-index-in-node="0">Estado Global Compartido:</strong>&nbsp;Implementar un contexto de React que centralice la información de los productos en el carrito y exponga los mecanismos necesarios para agregar nuevos ítems desde cualquier nivel de la interfaz</span><span data-path-to-node="26,0,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="26,0,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="26,1,0" id="p-rc_d8a8af22c6a3731c-1401"><span data-path-to-node="26,1,0,0"><strong data-path-to-node="26,1,0,0" data-index-in-node="0">Persistencia de Navegación:</strong>&nbsp;El estado global no debe reiniciarse al navegar entre el catálogo y las vistas de detalle</span><span data-path-to-node="26,1,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="26,1,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="26,2,0" id="p-rc_d8a8af22c6a3731c-1402"><span data-path-to-node="26,2,0,0"><strong data-path-to-node="26,2,0,0" data-index-in-node="0">Inmutabilidad:</strong>&nbsp;Garantizar la actualización adecuada de arreglos y objetos en memoria, evitando mutaciones directas y asegurando que React detecte los cambios de estado</span><span data-path-to-node="26,2,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="26,2,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="26,3,0" id="p-rc_d8a8af22c6a3731c-1403"><span data-path-to-node="26,3,0,0"><strong data-path-to-node="26,3,0,0" data-index-in-node="0">Modelado y Tipado:</strong>&nbsp;Definir contratos claros con TypeScript para los datos del producto y las propiedades que intercambian los componentes</span><span data-path-to-node="26,3,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="26,3,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li>
+<p data-path-to-node="26,4,0" id="p-rc_d8a8af22c6a3731c-1404"><span data-path-to-node="26,4,0,0"><strong data-path-to-node="26,4,0,0" data-index-in-node="0">Fronteras Cliente/Servidor:</strong>&nbsp;Identificar y marcar como componentes de cliente únicamente aquellos módulos que requieran interactividad, captura de eventos o hooks de estado/ciclo de vida</span><span data-path-to-node="26,4,0,1"><sup _ngcontent-ng-c3223023805=""></sup></span><span data-path-to-node="26,4,0,2">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c638892488=""></sources-carousel-inline></p>
+</li>
+<li><strong><span data-path-to-node="26,4,0,2">Diseño de interfaz:</span></strong><span data-path-to-node="26,4,0,2"> Evitar aplicaciones sin diseño o poco usables, se r</span><span data-path-to-node="26,4,0,2">ecomienda en esta fase de desarrollo el dejar la aplicación lo mas organizada y visualmente adecuada posible.</span></li>
+</ul>
+<h2 data-path-to-node="28">Entrega</h2>
+<p data-path-to-node="29">La entrega de este preparcial se realizará por medio de Bloque Neón enviando el enlace al&nbsp;<strong data-path-to-node="29" data-index-in-node="90">repositorio público de GitHub</strong>&nbsp;con la solución completa y funcional antes de la fecha límite establecida.</p>
+<blockquote data-path-to-node="30">
+<p data-path-to-node="30,0" id="p-rc_d8a8af22c6a3731c-1405"><span data-path-to-node="30,0,0"><strong data-path-to-node="30,0,0" data-index-in-node="0">Nota para el examen parcial:</strong>&nbsp;Este repositorio servirá como base de código obligatoria sobre la cual cada estudiante trabajará de forma individual durante el examen en vivo, donde se evaluará la extensión de la arquitectura, la creación de nuevas vistas y la manipulación avanzada del estado</span><span data-path-to-node="30,0,2">.</span></p>
+<h3 data-path-to-node="30">1. Enlace al Release de GitHub</h3>
+<ul data-path-to-node="31">
+<li>
+<p data-path-to-node="31,0,0">El código debe alojarse en un&nbsp;<strong data-path-to-node="31,0,0" data-index-in-node="30">repositorio público de GitHub</strong>.</p>
+</li>
+<li>
+<p data-path-to-node="31,1,0">Se debe generar un&nbsp;<strong data-path-to-node="31,1,0" data-index-in-node="19">GitHub Release</strong>&nbsp;(etiqueta sugerida:&nbsp;<code data-path-to-node="31,1,0" data-index-in-node="54">v1.0.0</code>&nbsp;o&nbsp;<code data-path-to-node="31,1,0" data-index-in-node="63">preparcial-v1.0</code>) que congele el estado del proyecto antes de la fecha y hora límite de entrega.</p>
+</li>
+<li>
+<p data-path-to-node="31,2,0">En Bloque Neón debe enviarse el enlace directo a dicho&nbsp;<em data-path-to-node="31,2,0" data-index-in-node="55">Release</em>.</p>
+</li>
+</ul>
+<h3 data-path-to-node="32">2. Video Demostrativo</h3>
+<p data-path-to-node="33">Adjuntar un enlace público a un video (YouTube en modo oculto/público, Loom, Google Drive con permisos abiertos, etc.) con una duración máxima de <strong data-path-to-node="33" data-index-in-node="146">4 a 7 minutos</strong>, donde se demuestre con fluidez y claridad el funcionamiento de la aplicación:</p>
+<ul>
+<li>
+<p data-path-to-node="11,0,0"><strong data-path-to-node="11,0,0" data-index-in-node="0">Evidencia del Tag / Release:</strong>&nbsp;Mostrar brevemente en el navegador la pestaña de GitHub en la sección&nbsp;<strong data-path-to-node="11,0,0" data-index-in-node="99">Releases</strong>, señalando la versión creada (<code data-path-to-node="11,0,0" data-index-in-node="138">v1.0.0</code>) y el commit hash asociado.</p>
+</li>
+<li>
+<p data-path-to-node="11,1,0"><strong data-path-to-node="11,1,0" data-index-in-node="0">Evidencia del Entorno Local:</strong>&nbsp;Mostrar la terminal ejecutando&nbsp;<code data-path-to-node="11,1,0" data-index-in-node="60">git status</code>&nbsp;y&nbsp;<code data-path-to-node="11,1,0" data-index-in-node="73">git log -1</code>&nbsp;para evidenciar que el proyecto que se corre localmente (<code data-path-to-node="11,1,0" data-index-in-node="141">npm run dev</code>) se encuentra en ese mismo commit y sin cambios pendientes de commitear (<em data-path-to-node="11,1,0" data-index-in-node="226">working tree clean</em>).</p>
+</li>
+<li>
+<p data-path-to-node="34,0,0"><strong data-path-to-node="34,0,0" data-index-in-node="0">Flujo de Navegación SPA:</strong>&nbsp;Mostrar la transición entre el catálogo principal (<code data-path-to-node="34,0,0" data-index-in-node="76">/</code>) y la vista de detalle de al menos dos productos distintos (<code data-path-to-node="34,0,0" data-index-in-node="138">/productos/[id]</code>) evidenciando que no existen recargas completas del navegador.</p>
+</li>
+<li>
+<p data-path-to-node="34,1,0"><strong data-path-to-node="34,1,0" data-index-in-node="0">Sincronización del Estado Global:</strong>&nbsp;Agregar productos al carrito tanto desde la vista principal como desde la vista de detalle.</p>
+</li>
+<li>
+<p data-path-to-node="34,2,0"><strong data-path-to-node="34,2,0" data-index-in-node="0">Actualización del Header:</strong>&nbsp;Señalar claramente cómo el contador del carrito en la barra superior se actualiza reactivamente en tiempo real con cada adición y cómo mantiene su valor intacto al cambiar entre rutas.</p>
+</li>
+<li>
+<p data-path-to-node="34,3,0"><strong data-path-to-node="34,3,0" data-index-in-node="0">Manejo de Errores y Calidad:</strong>&nbsp;Mostrar que la consola del navegador se encuentra limpia de advertencias o errores críticos durante toda la interacción.</p>
+</li>
+</ul>
+<blockquote data-path-to-node="36">
+<p data-path-to-node="36,0"><strong data-path-to-node="36,0" data-index-in-node="0">Nota para el Examen Parcial:</strong>&nbsp;El código congelado en este&nbsp;<em data-path-to-node="36,0" data-index-in-node="57">Release</em>&nbsp;será la base de trabajo individual obligatoria sobre la cual cada estudiante trabajará en tiempo real durante el&nbsp;<strong data-path-to-node="36,0" data-index-in-node="178">Examen Parcial en vivo</strong><span data-path-to-node="36,0" data-index-in-node="178">.</span></p>
+</blockquote>
+</blockquote>
+<p></p></body></html>
