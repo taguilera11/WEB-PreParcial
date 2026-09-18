@@ -13,12 +13,13 @@ export default function Header() {
           ShopHub
         </Link>
 
-        <span
+        <Link
+          href="/checkout"
           aria-label={`${totalItems} productos en el carrito`}
           className="rounded-full bg-blue-600 px-3 py-1 text-sm font-medium text-white"
         >
           Carrito: {totalItems}
-        </span>
+        </Link>
       </div>
     </header>
   );

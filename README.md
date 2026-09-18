@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# punto 1
 
-## Getting Started
+el contexto solo tenia items, totalItems y addToCart, o sea lo unico que se podia hacer era agregar productos
 
-First, run the development server:
+Para el parcial le agregueslas operaciones que faltaban
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- increaseQuantity suma una unidad
+- decreaseQuantity resta una unidad y si la cantidad queda en 0 el producto se elimina solo
+- removeFromCart saca un producto del carrito
+- clearCart deja el carrito vacio
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para la parte d la inmutabilidad ninguna funcion modifica la lista original, todas usan setItems con la version de funcion (setItems(prev => ...)) y pór dentro uso map, filter o spread, que siempre devuelven un arreglo nuevo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# punto 2
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+totalItems y totalPrice los calculo con reduce sobre items cada vez que se renderiza el provider y los paso en el value del contexto
 
-## Learn More
+Lo hice asi porque son datos que ya salen de items, no son informacion nueva .Si los guardara en otro estado tendria que acordarme de actualizarlos en las 5 operaciones del carrito y es como mas facil que se desincronicen
 
-To learn more about Next.js, take a look at the following resources:
+Calculandolos items queda como la unica fuente de verdad.Ademas la lista del carrito es corta, recorrerla dos veces no afecta el rendimiento y loos subtotales dedcada producto los calculo donde se muestran multiplicando price por quantity
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# punto 3
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+La pagina /checkout es un server component y solo arma la vista, lo interactivo esta en dos componentes del cliente, CheckoutSummary que muestra el resumen con los botones de mas, menos, eliminar y vaciar, y CheckoutForm que es el formulario
 
-## Deploy on Vercel
+Los 4 campos estan controlados por React con un solo useState que guarda un objeto con el nombre, el correo, el metodo de pago y la aceptacion de terminos, el checkbox se maneja con checked.Tengo otro estado llamado touched que marca cuales campos ya se tocaron
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Cuando se envia uso preventDefault para que no se recargue la pagina, prendo isSubmitting para que el botonbse bloquee y diga Procesando y asi no se manden pedidos repetidos, y hago un POST con fetch y async await a https://dummyjson.com/carts/add
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No integre ninguna libreria externa!
