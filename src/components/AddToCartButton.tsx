@@ -7,9 +7,7 @@ interface AddToCartButtonProps {
   product: AddToCartInput;
 }
 
-export default function AddToCartButton({
-  product,
-}: Readonly<AddToCartButtonProps>) {
+export default function AddToCartButton({ product }: AddToCartButtonProps) {
   const { addToCart } = useCart();
 
   return (

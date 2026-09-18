@@ -6,11 +6,10 @@ interface ProductCardProps {
   product: ProductListItem;
 }
 
-export default function ProductCard({ product }: Readonly<ProductCardProps>) {
+export default function ProductCard({ product }: ProductCardProps) {
   return (
     <article className="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
       <Link href={`/productos/${product.id}`}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={product.thumbnail}
           alt={product.title}

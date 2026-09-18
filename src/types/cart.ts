@@ -6,4 +6,9 @@ export interface CartItem {
   quantity: number;
 }
 
-export type AddToCartInput = Omit<CartItem, "quantity">;
+export interface AddToCartInput {
+  id: number;
+  title: string;
+  price: number;
+  thumbnail: string;
+}

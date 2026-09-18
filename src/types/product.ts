@@ -36,10 +36,14 @@ export interface Product {
   thumbnail: string;
 }
 
-export type ProductListItem = Pick<
-  Product,
-  "id" | "title" | "price" | "category" | "thumbnail" | "stock"
->;
+export interface ProductListItem {
+  id: number;
+  title: string;
+  price: number;
+  category: string;
+  thumbnail: string;
+  stock: number;
+}
 
 export interface ProductsResponse {
   products: ProductListItem[];
